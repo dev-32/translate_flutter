@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:translator/data/model/translated_data_model.dart';
@@ -13,7 +14,7 @@ class TranslateApiService {
   final String baseUrl = "https://translate-plus.p.rapidapi.com";
 
   var headers = {
-    'x-rapidapi-key': "47f467a080msh6f3bf7f05fd1c36p1122a2jsnaf1ee60c7d6f",
+    'x-rapidapi-key': dotenv.env['API_KEY']!,
     'x-rapidapi-host': "translate-plus.p.rapidapi.com",
     'Content-Type': "application/json"
   };
